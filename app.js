@@ -72,14 +72,27 @@ const accountFromMneumonic = () => {
 
 
 //encrypt the wallet with a password, bonus points if you have a progress
-const encrypt = () => {
-    console.log('encrypted wallet', encrypted)
+// const encrypt = async () => {
+//     let wallet = ethers.Wallet.fromMnemonic(mnemonic);
+//     let password = 'abcde12345';
+//     const encrypted = await wallet.encrypt(password);
+//     console.log('encrypted wallet', encrypted);
+// }
 
 
+async function encrypt() {
+    let wallet = ethers.Wallet.fromMnemonic(mnemonic);
+    let password = 'abcde12345';
+    const encrypted = await wallet.encrypt(password);
+    encryptedWallet = encrypted;
+    console.log(encrypted);
 }
 
 //decrypt the encrypted wallet 
-const decrypt = () => {
+async function decrypt() {
+    let password = 'abcde12345';
+    console.log(encryptedWallet)
+    const wallet = await ethers.Wallet.fromEncryptedJson(encryptedWallet, password);
     console.log('decrypted wallet', wallet)
 
 }
