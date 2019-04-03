@@ -65,8 +65,9 @@ const createAccount = () => {
 
 //take the mneumonic of the account and generate a wallet object, from the object list the address and privatekey
 const accountFromMneumonic = () => {
-    console.log('this is the address of the mneumonic')
-    console.log('this is the private key of the pneumonic')
+    let mnemonicWallet = ethers.Wallet.fromMnemonic(mnemonic);
+    console.log('this is the address of the mneumonic', mnemonicWallet.signingKey.address);
+    console.log('this is the private key of the mneumonic', mnemonicWallet.signingKey.privateKey)
 }
 
 
