@@ -29,12 +29,14 @@ const gasPrice = async () => {
 //get Response then Recipt of this transaction Hash 
 //0x425b74ff4090bad9dacd972f96646f1f136b7dee39be06910463c245761ad493
 
-const transactionReasponse = async () => {
-    console.log('my transaction reasponse = ', txReasponse)
+const transactionResponse = async () => {
+    const txResponse = await provider.getTransaction('0x425b74ff4090bad9dacd972f96646f1f136b7dee39be06910463c245761ad493');
+    console.log('my transaction reasponse = ', txResponse);
 }
 
 
 const transactionRecipt = async () => {
+    const txRecipt = await provider.getTransactionReceipt('0x425b74ff4090bad9dacd972f96646f1f136b7dee39be06910463c245761ad493');
     console.log('my transaction recipt = ', txRecipt)
 }
 
