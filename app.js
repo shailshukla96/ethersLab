@@ -44,7 +44,9 @@ const transactionRecipt = async () => {
 // of this address in ethers
 //0x42EB768f2244C8811C63729A21A3569731535f06
 const getBalance = () => {
+    provider.getBalance('0x42EB768f2244C8811C63729A21A3569731535f06').then((balance) => {
     console.log('this is the balance = ', balance)
+    });
 }
 
 //get Nonce of same address
