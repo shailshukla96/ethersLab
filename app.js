@@ -104,12 +104,17 @@ async function decrypt() {
 
 
 //sign a message 
-const sign = () => {
+const sign = async() => {
+    let wallet = ethers.Wallet.fromMnemonic(mnemonic);
+    signedMessage = await wallet.signMessage("life");
+    sig = signedMessage;
     console.log('this is me signing my life away', signedMessage)
+    
 }
 
 //recover the signed message
-const recoverSignature = () => {
+const recoverSignature = async() => {
+    let signingAddress = ethers.utils.verifyMessage("life", sig);
     console.log('signing address', signingAddress)
 
 }
