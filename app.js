@@ -22,7 +22,8 @@ const blockNumber = async () => {
 
 // get the gas price and convert it to decimal
 const gasPrice = async () => {
-    console.log('this is the current gas price =', gasPrice)
+    const gasPrice = await provider.getGasPrice();
+    console.log('this is the current gas price =', gasPrice.toString());
 }
 
 //get Reasponse then Recipt of this transaction Hash 
