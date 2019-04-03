@@ -1,7 +1,11 @@
 
 //get rinkeby provider
-
-
+let provider = ethers.getDefaultProvider('rinkeby');
+let latestBlock;
+let walletAddr = '0x0B5e91D571848fdd0b9991357085FbC4aCCf9D97';
+let mnemonic = 'result future boss nuclear cross flee inch olive youth pride seminar jeans';
+let encryptedWallet;
+let sig;
 //get latest block number
 const getBlock = () => {
 
