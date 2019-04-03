@@ -51,7 +51,9 @@ const getBalance = () => {
 
 //get Nonce of same address
 const getNonce = () => {
-    console.log("this is the nonce", nonce)
+    provider.getTransactionCount('0x42EB768f2244C8811C63729A21A3569731535f06').then((nonce) => {
+        console.log("this is the nonce", nonce )
+    });
 }
 
 //create an account and use the account in the next functions
