@@ -15,7 +15,9 @@ const getBlock = () => {
 
 //get the current blockNumber
 const blockNumber = async () => {
-    console.log('this is the block number = ', blockNumber)
+    const blockNumber = await provider.getBlockNumber();
+    latestBlock = blockNumber;
+    console.log('this is the block number = ', blockNumber);
 }
 
 // get the gas price and convert it to decimal
