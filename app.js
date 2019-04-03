@@ -8,8 +8,9 @@ let encryptedWallet;
 let sig;
 //get latest block number
 const getBlock = () => {
-
-    console.log('this is the latest block = ', block)
+    provider.getBlock(latestBlock).then((block) => {
+        console.log('this is the latest block\'s Info = ', block)
+    });
 }
 
 //get the current blockNumber
