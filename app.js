@@ -58,6 +58,8 @@ const getNonce = () => {
 
 //create an account and use the account in the next functions
 const createAccount = () => {
+    wallet = ethers.Wallet.createRandom();
+    walletAddr = wallet;
     console.log('this is my wallet there are many like it but this one is mine', wallet)
 }
 
